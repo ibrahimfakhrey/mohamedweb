@@ -42,6 +42,14 @@ with app.app_context():
         password = db.Column(db.String(100))
         name = db.Column(db.String(1000))
         email=db.Column(db.String(100))
+
+
+    class Orders(UserMixin, db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(100), unique=True)
+        email = db.Column(db.String(100))
+        people = db.Column(db.Integer)
+        special = db.Column(db.String(100))
     db.create_all()
 
 
@@ -52,6 +60,7 @@ class MyModelView(ModelView):
 
 admin = Admin(app)
 admin.add_view(MyModelView(Paid_user, db.session))
+admin.add_view(MyModelView(Orders, db.session))
 
 @app.route("/")
 def start():
@@ -67,27 +76,30 @@ def book ():
         date=request.form.get("date")
         people=request.form.get("people")
         special=request.form.get("request")
-        print(name)
-        print(email)
-        print(date)
-        print(people)
-        print(special)
+        new_order=Orders(
+            name=name,email=email,people=people,special=special
+        )
+        db.session.add(new_order)
+        db.session.commit()
         return render_template("index.html",message_1="Your order ",message_2= "is registered ")
     return render_template("booking.html")
 
+@app.route('/control',methods=["GET","POST"])
+def controle():
+    orders=Orders.query.all()
 
-# @app.route("/login",methods=["GET","POST"])
-# def login():
-#     if request.method=="POST":
-#         name=request.form.get("name")
-#         password=request.form.get("password")
-#         if name =="mohamed" and password=="1234":
-#             return render_template("secret.html")
-#         else:
-#             return redirect("/")
-#
-#
-#     return render_template("login.html")
+    return render_template("service.html",orders=orders)
+@app.route("/delete/<name>")
+def delete(name):
+    deleted_order=Orders.query.filter_by(name=name).first()
+    if deleted_order:
+        db.session.delete(deleted_order)
+        db.session.commit()
+        return redirect("/control")
+    else:
+
+        return "somthing went wrong "
+
 # @app.route("/register")
 # def register():
 #     user=input("please provide me with the  username\n")
