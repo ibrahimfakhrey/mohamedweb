@@ -50,18 +50,45 @@ with app.app_context():
         email = db.Column(db.String(100))
         people = db.Column(db.Integer)
         special = db.Column(db.String(100))
+
+    class Breakfast(UserMixin, db.Model):
+            id = db.Column(db.Integer, primary_key=True)
+            name = db.Column(db.String(100), unique=True)
+            description = db.Column(db.String(1000))
+            link = db.Column(db.String(1000))
+            price = db.Column(db.String(100))
+
+
+    class Lunch(UserMixin, db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(100), unique=True)
+        description = db.Column(db.String(1000))
+        link = db.Column(db.String(1000))
+        price = db.Column(db.String(100))
+
+
+    class Diner(UserMixin, db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        name = db.Column(db.String(100), unique=True)
+        description = db.Column(db.String(1000))
+        link = db.Column(db.String(1000))
+        price = db.Column(db.String(100))
     db.create_all()
 
 
 class MyModelView(ModelView):
     def is_accessible(self):
+
           return True
+
 
 
 admin = Admin(app)
 admin.add_view(MyModelView(Paid_user, db.session))
 admin.add_view(MyModelView(Orders, db.session))
-
+admin.add_view(MyModelView(Breakfast, db.session))
+admin.add_view(MyModelView(Lunch, db.session))
+admin.add_view(MyModelView(Diner, db.session))
 @app.route("/")
 def start():
 
@@ -100,13 +127,49 @@ def delete(name):
 
         return "somthing went wrong "
 
-# @app.route("/register")
-# def register():
-#     user=input("please provide me with the  username\n")
-#     password=input("please give me the password \n")
-#
-#     return redirect("/mohamed")
-
+@app.route("/add",methods=["GET","POST"])
+def add():
+    if request.method =="POST":
+        name=request.form.get("name")
+        target=request.form.get("choice")
+        description=request.form.get("description")
+        link=request.form.get("link")
+        price=request.form.get("price")
+        if target=="breakfast":
+            new_breakfast=Breakfast(
+                name=name,
+                description=description,
+                link=link,
+                price=price
+            )
+            db.session.add(new_breakfast)
+            db.session.commit()
+        elif target=="lunch":
+            new_lunch=Lunch (
+                name=name,
+                description=description,
+                link=link,
+                price=price
+            )
+            db.session.add(new_lunch)
+            db.session.commit()
+        elif target =="diner":
+            new_diner=Diner(
+                name=name,
+                description=description,
+                link=link,
+                price=price
+            )
+            db.session.add(new_diner)
+            db.session.commit()
+            return  redirect("/menue")
+    return render_template("addfood.html")
+@app.route("/menue")
+def menue():
+    all_breakfast=Breakfast.query.all()
+    all_lunch=Lunch.query.all()
+    all_diner=Diner.query.all()
+    return render_template("menu.html",all_breakfast=all_breakfast,all_lunch=all_lunch,all_diner=all_diner)
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=5000 ,debug=True)
 
