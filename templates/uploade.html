@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>2024 Training Plan</title>
+
+    <link rel="stylesheet" href="../static/css/table.css">
+    <link rel="stylesheet" href="../static/css/index2.css">
+  <link href="../static/img/favicon.ico.png" rel="icon" type="image/x-icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handlee&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Include Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/css/index2.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<!-- Navbar Start -->
+    <div class="container-fluid bg-light position-relative shadow">
+      <nav
+        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
+      >
+        <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 20px">
+  <i class="flaticon-043-teddy-bear"></i>
+  <img src="../static/img/logo.png" alt="Logo" style="height: 50px; width: 50px; margin-right: 5px;">
+  <span class="text-primary">Middle East For Management Consulting</span>
+</a>
+
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarCollapse"
+        >
+          <div class="navbar-nav font-weight-bold mx-auto py-0">
+            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/about" class="nav-item nav-link">About</a>
+            <a href="class.html" class="nav-item nav-link">Consulting</a>
+            <a href="team.html" class="nav-item nav-link">Upcoming Events</a>
+            <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+            <div class="nav-item dropdown">
+<!--              <a-->
+<!--                href="#"-->
+<!--                class="nav-link dropdown-toggle"-->
+<!--                data-toggle="dropdown"-->
+<!--                >Pages</a-->
+<!--              >-->
+              <div class="dropdown-menu rounded-0 m-0">
+                <a href="blog.html" class="dropdown-item">Blog Grid</a>
+                <a href="single.html" class="dropdown-item">Blog Detail</a>
+              </div>
+            </div>
+            <a href="/2024 Training Plan" class="nav-item nav-link">2024 Training Plan</a>
+          </div>
+<!--          <a href="" class="btn btn-primary px-4">Join Us Mentors</a>-->
+        </div>
+      </nav>
+    </div>
+    <!-- Navbar End -->
+<br>
+<!-- Search Bar HTML -->
+<div class="search-container">
+    <img src="../static/img/logo.png" alt="Logo" style="height: 60px; width: 60px; margin-right: 5px;">
+    <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for Training...">
+</div>
+<br>
+<!-- Your existing content -->
+
+<div class="table-container" >
+    <table>
+        <thead>
+            <tr>
+        <th>Training Program</th>
+        <th>Duration Days</th>
+        <th>Available</th>
+        <th>Language</th>
+        <th>Start-End Date</th>
+        <th>Where</th>
+        <th>Register</th>
+    </tr>
+        </thead>
+        <tbody>
+            <!-- Repeat this block for each row in your table -->
+            {% for c in courses %}
+            <tr>
+    <td>{{ c.training_program }}</td>
+    <td>{{c.duration_days }}</td>
+    <td>{{c.available }}</td>
+    <td>{{c.language}}</td>
+<td>{{ c.start_date.split(' ')[0] }} - {{ c.end_date.split(' ')[0] }}</td>
+    <td>{{c.where}}</td>
+    <td>
+        <a href="/login">
+            <button type="button">Register</button>
+        </a>
+    </td>
+</tr>
+            {% endfor %}
+
+
+            <!-- Additional rows here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Your existing content -->
+
+<table id="myTable">
+
+
+
+
+
+    <!-- Add more rows as needed -->
+</table>
+<div id="mobileView" style="display: none;">
+    <!-- This will be populated by JavaScript for mobile view -->
+</div>
+
+<!-- Footer Start -->
+    <div
+      class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5"
+    >
+      <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+          <a href="" class="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style="font-size: 40px; line-height: 40px">
+    <i class="flaticon-043-teddy-bear"></i>
+    <img src="../static/img/logo.png" alt="Logo" style="height: 90px; width: auto; margin-right: 10px;">
+    <span class="text-white">MMC</span>
+</a>
+
+          <p>
+            Our commitment to sustainability. MMC is committed to environmental and social sustainability. We bring sustainability practices. We
+support each other as we adapt to ever-changing realities because we know our individual and collective actions make a difference.
+          </p>
+          <div class="d-flex justify-content-start mt-4">
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a
+              class="btn btn-outline-primary rounded-circle text-center mr-2 px-0"
+              style="width: 38px; height: 38px"
+              href="#"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+          <h3 class="text-primary mb-4">Get In Touch</h3>
+          <div class="d-flex">
+            <h4 class="fa fa-map-marker-alt text-primary"></h4>
+            <div class="pl-3">
+              <h5 class="text-white">Address</h5>
+              <p>Abu Dhabi United Arab Emirates</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <h4 class="fa fa-envelope text-primary"></h4>
+            <div class="pl-3">
+              <h5 class="text-white">Email</h5>
+              <p>info@middleeast-studies.com</p>
+            </div>
+          </div>
+          <div class="d-flex">
+            <h4 class="fa fa-phone-alt text-primary"></h4>
+            <div class="pl-3">
+              <h5 class="text-white">Phone</h5>
+              <p>+971 568 821 401</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+          <h3 class="text-primary mb-4">Business & Industry Services</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Instrumentation & Controls</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Renewable Energy Engineering</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Electrical and Power Engineering</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Mechanical & Maintenance Engineering</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Cement Manufacturing </a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Iron & Steel Manufacturing</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Aluminum Manufacturing</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Geology, Drilling, Reservoir & Petroleum</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Information Technology (IT)</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+          <h3 class="text-primary mb-4">Business & Industry Services</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Health & Safety</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Supply Chain Management</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Marine & Offshore Engineering</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Projects & Contracts</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Management, Leadership & HR</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Customer Service Management</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Sales & Marketing</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Finance, Banking & Budgeting</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="container-fluid pt-5"
+        style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;"
+      >
+        <p class="m-0 text-center text-white">
+          &copy;
+<!--          <a class="text-primary font-weight-bold" href="#">Your Site Name</a>.-->
+          All Rights Reserved.
+
+          <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+          Designed by
+          <a class="text-primary font-weight-bold" href="https://github.com/OmarIslam9"
+            >Omar Islam</a
+          >
+
+        </p>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+<script>
+// JavaScript for Search Functionality
+function searchTable() {
+    var input, filter, table, tr, td, i, j, visible;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.querySelector(".table-container table"); // Selecting the table within .table-container
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+        td = tr[i].getElementsByTagName("td");
+        visible = false;
+        for (j = 0; j < td.length; j++) {
+            if (td[j] && td[j].textContent.toUpperCase().indexOf(filter) > -1) {
+                visible = true;
+            }
+        }
+        tr[i].style.display = visible ? "" : "none";
+    }
+}
+
+
+
+// Initial check
+if (window.innerWidth <= 600) {
+    createMobileView();
+}
+</script>
+
+</body>
+</html>
