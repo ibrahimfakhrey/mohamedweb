@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "eco-volt-379006",
+  "private_key_id": "be16f0b87aaaa6a541dac15c0e38ceed2021e5d1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDytMyQPH9pnNfx\ngvmIa7p/Q4FyMeITzdHUjd0c5ixQDYOhpp+YLNjuu9pJ/dYSP7I4TJary8Uz5+8Q\nlu7YyJt7XVCU/fOB4mQ30w4RWk6kpmu4TkGCn/IqMDHRuGOlA2UR7PBND2wbZ2G3\nfKPCGKIJEhs9aZFe/sqEB0jcBkWstRKYmLEkP7rys1JDnBmvoNrmuzqPTE3HTIbK\n5nRXjQNQxFO5p84wncLM42ATMBwmTZoeFCcU4TwINLyItvpLk5MF7e/B+oLvsSIZ\nzozhKGgvalJk9LJs3kq64qNdt29ZmM+73omb5eKlwjXRGjISMHOhq9bl/qyThFvh\nAW6F+GVhAgMBAAECggEAQWmHBIy5jj5OWPICzMi0D96iwaM+GjZLiizd3g8O/FhY\nFLYypzHXGaiZcX2vN2XhY5kItq6JrK6i2ObE4rpWZU5GDJHREj1w4zbHwNeFAI01\n1QuKTmlLPCGXG73FZVDf6Y/hR/OTIGOhi3FVNVesPCOcIdYU7vReomzQLzSljKEO\nSHihhuA87lue0druoUeEqzIu0pBVrOIY8uFKuNa7m4R1WKXusCFNxnjZLuC/0LmZ\np+IdVLzs8UPYO9Lia8rzkXsdcvC1WKIevyrJoyuLIzekn4b+Pl23nOtiOpwKvfe7\nfx7oOGIAo5hH08JpfPpArg9m4myTadXmQBxRhNY//QKBgQD+sJ4/0HdBPyQURuN4\neTTFJDAsmzQHjiWwUa/VYCsginHKs5qGJiCLNBY1ywGN8Dd+FQN4chY/1rYSCXXa\n+JZ/j0ob9DXArTjcotojFy/j5zMaD4SMCjarm4MneLDXHxXtDmQfpf9YNzGi0zgQ\nZBf2R8n7jxIbL8Qtb2YdfV1gxwKBgQDz9GaJKW+wyGhlk6V6CIxC8MejKyOeiz8h\npuh6NW/wKcMJTgIo84vBbxveyfVTKFcmshexpxgCNJXC89p9ZGPUimKBfnUcy8on\nj204Uq+fw++fxZwCxPrQo0slt0e1jIYGGiFyiVrdqOrC9wKJHXQbxpyi47yrROsY\nfGG1v0kwlwKBgQDySf8h4iWxEmo2SAHZ+CR1bynNJZDnpxi/ldZafPRKLqp2FUpp\nWBgZlWGTpx5Bc0a3UTJOAOqdrJrkqc9OkrJJg30S/s2sEJ5JdzthqotKmgWJQz3r\nI0RDGNw6Tpyc6dun+srROM+jkk5MAfgRz8bj6gOCpuaoqlZMiu9wGnUcvQKBgC0g\naZM3ygRengkkLbkMOb3sQlGpmjYqtevorxpkJie74esntfiTTKfkgLhOjYXrcWuk\nCAQBz8wgpA9jAmitmFXpn10q4kkIXYXB30dK7FfWa84XRMuyWl8bxbvdUnN/4g7g\n6I0CYX+dTofwH1Tz0NWOgM0U6YKZBhAKehyfnM9TAoGBAKlZm5za2rwLsFuODFYQ\nfQMSnNyO58qxJ3oJjH5HdFj7O7ZV2zOXM8SMPnUP+op7P5IRNYkzj2oSiJSIT+Sy\nGoOq8yN83nmGSYHVFLmPqHJ9oUyBaktW44+IiWrESNYy35CtyhzaPOjo9La0XvNS\nopuSTVL0xcTbJsH/l6ZZj8ly\n-----END PRIVATE KEY-----\n",
+  "client_email": "ibrahimfakhreyibrahim@eco-volt-379006.iam.gserviceaccount.com",
+  "client_id": "113468180041981884030",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ibrahimfakhreyibrahim%40eco-volt-379006.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
